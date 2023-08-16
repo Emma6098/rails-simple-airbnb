@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="col-sm-8 col-sm-offset-2 mx-auto border-bottom pb-3 pt-4"><%= @flat.name%>
+  <small>
+    <%=link_to edit_flat_path(@flat.id) do%>
+      <i class="fa fa-pencil"></i>
+    <%end%>
+    <%=link_to flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+      <i class="fa-solid fa-trash"></i>
+    <%end%>
+  </small>
+  </h2>
+  <p class="row col-sm-8 col-sm-offset-2 mx-auto pt-3"><%= @flat.address%></p>
+  <p class="row col-sm-8 col-sm-offset-2 mx-auto pt-3"><%= @flat.description%></p>
+  <p class="row col-sm-8 col-sm-offset-2 mx-auto pt-3"><%= @flat.price_per_night%></p>
+  <p class="row col-sm-8 col-sm-offset-2 mx-auto pt-3"><%= @flat.number_of_guests%></p>
+  <%=link_to "Back to list", flats_path%>
+</div>

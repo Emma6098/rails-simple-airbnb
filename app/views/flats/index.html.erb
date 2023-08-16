@@ -1,0 +1,15 @@
+<%=link_to "New flat", new_flat_path%>
+<div class="container">
+  <ul class="row col-sm-8 col-sm-offset-2 mx-auto">
+  <%@flats.each do |flat|%>
+    <li>
+      <h2><%= link_to flat.name, flat_path(flat) %></h2>
+      <br>
+      <p><%= flat.address%></p>
+      <p><%= flat.description%></p>
+      <p><%= flat.price_per_night%></p>
+      <p><%= flat.number_of_guests%></p>
+    </li>
+  <%end%>
+  </ul>
+</div>
